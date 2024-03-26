@@ -8,7 +8,7 @@ pool:
 
 steps:
   - script: |
-      ./docs1.sh
+      ./docs.sh
       git config --local user.name "Azure Pipelines"
       git config --local user.email "tamh@mypinpad.com"
       git add .
