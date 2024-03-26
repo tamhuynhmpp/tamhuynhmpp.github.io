@@ -17,13 +17,13 @@ steps:
 
   - task: DownloadSecureFile@1
     inputs:
-      secureFile: deploy_key_2
+      secureFile: deploy_key_3
     displayName: 'Get the deploy key'
 
   - script: |
-      mkdir ~/.ssh && mv $DOWNLOADSECUREFILE_SECUREFILEPATH ~/.ssh/id_ed25519
-      chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_ed25519
+      mkdir ~/.ssh && mv $DOWNLOADSECUREFILE_SECUREFILEPATH ~/.ssh/id_ed25519_3
+      chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_ed25519_3
       ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-      git remote set-url --push origin git@github.com:tamhuynhmpp/tamhuynhmpp.github.io.git
+      git remote set-url --push origin git@github.com:tamh-mpp/tamh-mpp.github.io.git
       git push origin HEAD:master
     displayName: 'Publish GitHub Pages'
