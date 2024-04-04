@@ -22,7 +22,7 @@ steps:
     displayName: 'Get the deploy key'
 
   - script: |
-      mkdir ~/.ssh && mv $(SecurefileDownload.secureFilePath) ~/.ssh/id_ed25519_3
+      mv $(SecurefileDownload.secureFilePath) ~/.ssh/id_ed25519_3
       chmod 700 ~/.ssh && chmod 600 ~/.ssh/id_ed25519_3
       ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       git remote set-url --push origin git@github.com:tamh-mpp/tamh-mpp.github.io.git
